@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://www.drummerworld.com/drummerworld2/keithmoon550gr.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.drum-kit {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.key {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    border-color: transparent; /* Transparent border */
+    text-shadow: 1px 1px black; /* Black text shadow */
+    transition: all 0.07s;
+    position: relative;
+    overflow: hidden;
+    color: #ffc600;
+    font-weight: bold; /* Make text bolder */
+    white-space: normal; /* Allow text to wrap */
+}
+
+.key:before {
+    content: attr(data-before);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.5); /* White with 50% opacity */
+    color: white; /* White text color */
+    font-weight: bold;
+}
+
+.key:after {
+    content: attr(data-after);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.5); /* #ffc600 with 50% opacity */
+    color: #fffb00; /* #ffc600 text color */
+    font-weight: bold;
+}
+
+.audio {
+    display: none;
+}
+
+.playing {
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 10px #ffc600;
+}
